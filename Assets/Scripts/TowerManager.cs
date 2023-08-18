@@ -34,6 +34,7 @@ public class TowerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //check if player is placing an object then find the mouse position
         if(isPlacing)
         {
             indicator.position = GetGridPosition();
@@ -42,6 +43,7 @@ public class TowerManager : MonoBehaviour
             if(Input.mousePosition.y > Screen.height * (1f - (topSafePercent/ 100f)))
             {
                 indicator.gameObject.SetActive(false);
+                //Else check for obstacles and remove the icon
             } else if (Physics.Raycast(indicator.position + new Vector3(0f, -2f, 0f), Vector3.up, out hit, 10f, whatIsObstacle))
             {
                 indicator.gameObject.SetActive(false);

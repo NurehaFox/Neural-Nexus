@@ -22,4 +22,10 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void Settings()
+    {
+        SceneManager.LoadScene(gameScene);
+    }
+
 }

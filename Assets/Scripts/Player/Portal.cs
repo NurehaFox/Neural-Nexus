@@ -20,11 +20,6 @@ public class Portal : MonoBehaviour
         healthSlider.value = currentHealth;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void TakeDamage(float damageToTake)
     {

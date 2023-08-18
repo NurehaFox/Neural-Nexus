@@ -28,15 +28,23 @@ public class UIController : MonoBehaviour
 
     public TMP_Text waveText;
 
+    public TMP_Text scoreText;
+    public float scoreAmount;
+    public float pointIncreasePerSecond;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        scoreAmount = 0f;
+        pointIncreasePerSecond = .5f;    
     }
 
     // Update is called once per frame
     void Update()
     {
+        scoreText.text = "Survial Time : " + scoreAmount.ToString("1") + "Seconds";
+        scoreAmount += pointIncreasePerSecond * Time.fixedDeltaTime;
+
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             PauseUnpause();

@@ -19,12 +19,6 @@ public class MoneyManager : MonoBehaviour
         UIController.instance.moneyText.text = currentMoney.ToString();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void GiveMoney(int amountToGive)
     {
         currentMoney += amountToGive;
@@ -40,7 +34,6 @@ public class MoneyManager : MonoBehaviour
         {
             canSpend = true;
 
-            Debug.Log("Spent " + amountToSpend);
             currentMoney -= amountToSpend;
         }
 
